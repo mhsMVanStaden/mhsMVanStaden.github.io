@@ -1,24 +1,37 @@
+/*
+house assignment
+Created by Michael van Staden
+March 18, 2019
+*/
 function setup() {
-  // put setup code here
   //create a canvas
-  createCanvas(400,400);
+  createCanvas(800,600);
 }
 
 function draw() {
+  //change this variable to scale the house
+  let houseWidth = 250;
   // put drawing code here
-  background(255,255,0);
-  //make variables for hight and width
-  var houseWidth = 100;
-  var roofWidth = 100;
-  var x = 200;
-  var y = 200;
-  var scale = 3;
-  //base of house
-  strokeWeight(2)
-  rect(width/2, height/2, houseWidth, houseWidth/2);
+  //sky
+  background(0,200,255);
+  line(0,height/2,width,height/2)
   //ground
-
+  fill(0,200,0)
+  rect(0,height/2,width,height/2)
+  strokeWeight(houseWidth/10)
+  //three houses connected (townhouse)
+fill(0,0,255);
+  rect(width/3, height/2, -houseWidth,houseWidth/2);
+  rect(width/3, height/2, houseWidth+houseWidth,houseWidth/2);
+  rect(width/3, height/2, houseWidth,houseWidth/2);
   //fancy roof
-  strokeWeight(5);
-  triangle(x+ houseWidth/scale,y- houseWidth/scale,x,y,x+ houseWidth/scale,y);
+  fill(255,0,0);
+  triangle(width/3-houseWidth,height/2,width/3+houseWidth/2,height/2-houseWidth,width/3+houseWidth*2,height/2)
+//doors
+  rect(width/3-houseWidth/1.5, height/2+houseWidth/6, houseWidth/4, houseWidth/3);
+  rect(width/3+houseWidth/2.5, height/2+houseWidth/6, houseWidth/4, houseWidth/3);
+  rect(width/3+houseWidth+houseWidth/2.5, height/2+houseWidth/6, houseWidth/4, houseWidth/3);
+  //window in triangle
+  fill(0,0,255)
+  circle(width/3+houseWidth/2,height/2-houseWidth/2,houseWidth/4)
 }
