@@ -2,7 +2,7 @@ var mySound; //variable to hold sound
 var img;
 function preload(){
   //loads sound file variable
-  mySound = loadSound('Mario_Here_We_Go.mp3');
+  mySound = loadSound('Mario Here We Go.mp3');
   img = loadImage('MarioFace.png');
 }
 function setup() {
