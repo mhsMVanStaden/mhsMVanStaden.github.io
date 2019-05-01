@@ -50,32 +50,6 @@ hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
 }
  //output statement for console
  print(hit);
- //If a player is hit the game ends
- if (hit===true || hitGamePlay2_1===true || hitGamePlay2_2===true || hitGamePlay2_3=== true){
-   background(0);
-   textFont('Banshee');
-   fill(0,0,255);
-   textSize(100);
-   text('Player 2 Wins',120,300);
-   textSize(35);
-   fill(255);
-   text('Refresh the Page to Play Again',175,400);
-   noloop();
-   //keep the end screen using a syntax error
- }
-   if (hit2===true || hitGamePlay2_4===true || hitGamePlay2_5===true || hitGamePlay2_6=== true){
-     noLoop();
-     background(0);
-     textFont('Banshee');
-     fill(255,0,0);
-     textSize(100);
-     text('Player 1 Wins',120,300);
-     textSize(35);
-     fill(255);
-     text('Refresh the Page to Play Again',175,400);
-     noloop();
-     //keep the end screen using a syntax error
- }
   if (gamePlay==false) {
   background(0);  //background
   fill(255);
@@ -244,6 +218,32 @@ hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
   if (keyIsDown(76)){
     x2+=2
   }
+  //If a player is hit the game ends
+  if (hit===true || hitGamePlay2_1===true || hitGamePlay2_2===true || hitGamePlay2_3=== true){
+    background(0);
+    textFont('Banshee');
+    fill(0,0,255);
+    textSize(100);
+    text('Player 2 Wins',120,300);
+    textSize(35);
+    fill(255);
+    text('Press "R" to Restart and Play Again',145,400);
+    noLoop();
+    //keep the end screen using a syntax error
+  }
+    if (hit2===true || hitGamePlay2_4===true || hitGamePlay2_5===true || hitGamePlay2_6=== true){
+      noLoop();
+      background(0);
+      textFont('Banshee');
+      fill(255,0,0);
+      textSize(100);
+      text('Player 1 Wins',120,300);
+      textSize(35);
+      fill(255);
+      text('Press "R" to Restart and Play Again',145,400);
+      noLoop();
+      //keep the end screen using a syntax error
+    }
 }
 function keyPressed(){
   //detect whether to start the game
@@ -255,3 +255,36 @@ function keyPressed(){
     gamePlay2 = true;
     }
   }
+function keyTyped(){
+  if (keyIsDown(82)|| keyIsDown(82)){
+  //reset the game to be played again
+  clear();
+  x1=0;
+  y1=300;
+  x2=700;
+  y2=300;
+  x3=400;
+  y3=300;
+  x4=500;
+  y4=400;
+  x5=300;
+  y5=200;
+  projectileX=4;
+  projectileY=4;
+  projectileX2=5;
+  projectileY2=5;
+  projectileX3=6;
+  projectileY3=6;
+  hit=false;
+  hit2=false;
+  hitGamePlay2_1=false;
+  hitGamePlay2_2=false;
+  hitGamePlay2_3=false;
+  hitGamePlay2_4=false;
+  hitGamePlay2_5=false;
+  hitGamePlay2_6=false;
+  gamePlay=false;
+  gamePlay2=false;
+  loop();
+  }
+}
