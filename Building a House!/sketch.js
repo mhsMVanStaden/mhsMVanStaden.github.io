@@ -20,7 +20,7 @@ function draw() {
   rect(0,height/2,width,height/2)
   strokeWeight(houseWidth/10)
   //three houses connected (townhouse)
-fill(0,0,255);
+  fill(0,0,255);
   rect(width/3, height/2, -houseWidth,houseWidth/2);
   rect(width/3, height/2, houseWidth+houseWidth,houseWidth/2);
   rect(width/3, height/2, houseWidth,houseWidth/2);
