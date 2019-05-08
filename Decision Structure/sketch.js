@@ -28,6 +28,7 @@ let hitGamePlay2_4=false;
 let hitGamePlay2_5=false;
 let hitGamePlay2_6=false;
 
+//
 let gamePlay = false;
 let gamePlay2 = false;
 function setup() {
@@ -35,54 +36,55 @@ function setup() {
 }
 
 function draw() {
-//end game if either player is hit
-if (gamePlay === true){
-hit= collideRectRect(x3,y3,size*4,size*4,x1,y1,size,size);
-hit2= collideRectRect(x3,y3,size*4,size*4,x2,y2,size,size);
-}
-if (gamePlay2 === true){
-hitGamePlay2_1= collideRectRect(x3,y3,size/2,size/2,x1,y1,size,size);
-hitGamePlay2_2= collideRectRect(x4,y4,size/2,size/2,x1,y1,size,size);
-hitGamePlay2_3= collideRectRect(x5,y5,size/2,size/2,x1,y1,size,size);
-hitGamePlay2_4= collideRectRect(x3,y3,size/2,size/2,x2,y2,size,size);
-hitGamePlay2_5= collideRectRect(x4,y4,size/2,size/2,x2,y2,size,size);
-hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
-}
- //output statement for console
- print(hit);
-  if (gamePlay==false) {
-  background(0);  //background
-  fill(255);
-  //Game title
-  textFont('Banshee');
-  textSize(200);
-  text('Log Fire',50,height/3.6);
-  textSize(35);
-  //Player presses enter to begin game
-  text('Press Enter to Start Game on Easy',160,height/2.4);
-  text('Press BackSpace to Start Game on Hard',130,height/2);
-  //show controls and who player 1 is
-  textSize(50);
-  fill(255,0,0);
-  text('Player 1', 50, 400);
-  rect(110,430,25,25);
-  textSize(20);
-  text('Use WASD to move',50,500);
-  textSize(50);
-  fill(0,0,255);
-  text('Player 2', 575,400);
-  textSize(20);
-  rect(640,425,25,25);
-  text('Use IJKL to move',575,500);
-  fill(255);
-  textSize(50);
-  rect(x3-60,y3+150,100,100);
-  text('Do Not Touch',250,350);
-  text('Block',325,400);
+  //If a player is hit end the game and reveal the winner (Difficulty Easy)
+  if (gamePlay === true){
+  hit= collideRectRect(x3,y3,size*4,size*4,x1,y1,size,size);
+  hit2= collideRectRect(x3,y3,size*4,size*4,x2,y2,size,size);
   }
+  //If a player is hit end the game and reveal the winner (Difficulty Hard)
+  if (gamePlay2 === true){
+   hitGamePlay2_1= collideRectRect(x3,y3,size/2,size/2,x1,y1,size,size);
+   hitGamePlay2_2= collideRectRect(x4,y4,size/2,size/2,x1,y1,size,size);
+   hitGamePlay2_3= collideRectRect(x5,y5,size/2,size/2,x1,y1,size,size);
+   hitGamePlay2_4= collideRectRect(x3,y3,size/2,size/2,x2,y2,size,size);
+   hitGamePlay2_5= collideRectRect(x4,y4,size/2,size/2,x2,y2,size,size);
+   hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
+  }
+  //Start screen  
+  if (gamePlay==false) {
+    background(0);  //background
+    fill(255);
+    //Game title
+    textFont('Banshee');
+    textSize(200);
+    text('Log Fire',50,height/3.6);
+    textSize(35);
+   //Player presses enter to begin game
+    text('Press Enter to Start Game on Easy',160,height/2.4);
+    text('Press BackSpace to Start Game on Hard',130,height/2);
+    //show controls and who player 1 is
+    textSize(50);
+    fill(255,0,0);
+    text('Player 1', 50, 400);
+    rect(110,430,25,25);
+    textSize(20);
+    text('Use WASD to move',50,500);
+    textSize(50);
+    fill(0,0,255);
+    //show controls and who player 2 is
+    text('Player 2', 575,400);
+    textSize(20);
+    rect(640,425,25,25);
+    text('Use IJKL to move',575,500);
+    fill(255);
+    textSize(50);
+    rect(x3-60,y3+150,100,100);
+    text('Do Not Touch',250,350);
+    text('Block',325,400);
+  }
+  //Start game on Easy mode
   if (gamePlay===true){
     background(0);
-
     //player 1 rectangle
     fill(255,0,0);
     rect(x1,y1,size,size);
@@ -116,6 +118,7 @@ hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
     if (x2>775){
       x2=x2-2
     }
+    //Make Enemy Projectiles reflect off Borders
     x3+=projectileX;
     y3+=projectileY;
     if(y3+100>=height || y3<=0){
@@ -127,7 +130,7 @@ hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
       projectileX=projectileX*(-1);
     }
   }
-
+  //Start game on hard mode
   if (gamePlay2===true){
     background(0);
 
@@ -138,7 +141,7 @@ hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
     //player 2 rectangle
     rect(x2,y2,size,size);
     fill(255);
-    //enemh rectangle
+    //3 enemy rectangle
     rect(x3,y3,size/2,size/2);
     rect(x4,y4,size/2,size/2);
     rect(x5,y5,size/2,size/2);
@@ -167,6 +170,7 @@ hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
     if (x2>775){
       x2=x2-2
     }
+    //Make enemies bounce off walls
     x3+=projectileX;
     y3+=projectileY;
     if(y3+12.5>=height || y3<=0){
@@ -229,21 +233,21 @@ hitGamePlay2_6= collideRectRect(x5,y5,size/2,size/2,x2,y2,size,size);
     fill(255);
     text('Press "R" to Restart and Play Again',145,400);
     noLoop();
-    //keep the end screen using a syntax error
+    //Prevent the game from continuing without pressing the 'R' key  to restart
   }
-    if (hit2===true || hitGamePlay2_4===true || hitGamePlay2_5===true || hitGamePlay2_6=== true){
-      noLoop();
-      background(0);
-      textFont('Banshee');
-      fill(255,0,0);
-      textSize(100);
-      text('Player 1 Wins',120,300);
-      textSize(35);
-      fill(255);
-      text('Press "R" to Restart and Play Again',145,400);
-      noLoop();
-      //keep the end screen using a syntax error
-    }
+  if (hit2===true || hitGamePlay2_4===true || hitGamePlay2_5===true || hitGamePlay2_6=== true){
+     noLoop();
+     background(0);
+     textFont('Banshee');
+     fill(255,0,0);
+     textSize(100);
+     text('Player 1 Wins',120,300);
+     textSize(35);
+     fill(255);
+     txt('Press "R" to Restart and Play Again',145,400);
+     noLoop();
+     //Prevent the game from continuing without pressing the 'R' key  to restart
+  }
 }
 function keyPressed(){
   //detect whether to start the game
@@ -259,6 +263,7 @@ function keyTyped(){
   if (keyIsDown(82)|| keyIsDown(82)){
   //reset the game to be played again
   clear();
+  //Return variables to original value to prevent the game starting with a collision
   x1=0;
   y1=300;
   x2=700;
