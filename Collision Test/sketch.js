@@ -6,7 +6,8 @@ let size = 50;
 let x1Speed=5;
 let x2Speed=5;
 let hit = false;
-  function setup() {
+
+function setup() {
   // put setup code here
   createCanvas(800,600);
 }
@@ -34,6 +35,7 @@ function draw() {
     //enemy block, no touching
     fill(255,0,0);
     rect(x2,y,size,size);
+    //Make object bounce
     x1+=x1Speed;
     x2+=x2Speed;
     if (x1>width-size || x1<0){
