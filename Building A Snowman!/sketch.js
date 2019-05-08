@@ -16,7 +16,10 @@ ellipse(80, 64, 100, 100);
 
 // The snowman
 fill(255,255,250);
+//Bottom Snowball
 ellipse(200, 300, 150, 150);
+//Middle Snowball
 ellipse(200, 200, 100, 100);
+//Snowman Head
 ellipse(200, 120, 75, 75);
 }
