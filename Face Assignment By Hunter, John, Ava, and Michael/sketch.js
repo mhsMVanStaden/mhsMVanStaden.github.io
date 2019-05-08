@@ -137,6 +137,7 @@ function drawEyes() {
 }
 
 //Hat by Michael van Staden
+//Hat was split into two parts to allow the hat head be underneath ears and hat cap to be overtop the ears
 function hatBase(){
   strokeWeight(2.5);
   fill(225,21,54);
@@ -162,9 +163,8 @@ function drawHat(){
   //cover for arcs of hat
   fill(248,204,169);
   arc(width/2, height/2-faceWidth/10, faceWidth-faceWidth/50, faceHeight/1.75,4.3*PI/4,7.7*PI/4,OPEN);
-  //M for hat
+  //Created the M logo in the center of the white Ellipse
   fill(225,21,54);
-
   beginShape();
   vertex(width/2-faceWidth/6,height/2-faceWidth/1.7);
   vertex(width/2-faceWidth/13,height/2-faceWidth/1.37);
