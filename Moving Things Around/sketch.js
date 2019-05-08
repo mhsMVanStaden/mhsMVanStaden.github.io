@@ -20,6 +20,7 @@ function draw() {
   ellipse(x,y,size,size+size);
   noStroke();
   rect(100, 500, size*5, size/4);
+  //Make the rectangle bounce and move
   x+=xSpeed;
   y=y+ySpeed;
   if(y+size>=height || y<=0){
