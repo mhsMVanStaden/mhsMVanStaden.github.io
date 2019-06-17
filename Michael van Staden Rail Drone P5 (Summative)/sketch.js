@@ -303,7 +303,7 @@ function draw(){
     LaserDrillHit12=collideRectRect(LaserDrillX+750,950,1275,50,SmaeX,SmaeY,50,100);
     PlatformHit1=collideRectRect(537.5,200,200,5,SmaeX,SmaeY,50,100);
     PlatformHit2=collideRectRect(137.5,650,200,5,SmaeX,SmaeY,50,100);
-    PlatformHit3=collideRectRect(937.5,200,5,SmaeX,SmaeY,50,100);
+    PlatformHit3=collideRectRect(937.5,650,5,SmaeX,SmaeY,50,100);
     EnemyHit1=collideRectRect(EnemyX+537.5,EnemyY+150,50,50,SmaeX,SmaeY,50,100);
     EnemyHit2=collideRectRect(EnemyX+137.5,EnemyY+600,50,50,SmaeX,SmaeY,50,100);
     EnemyHit3=collideRectRect(EnemyX+937.5,EnemyY+600,50,50,SmaeX,SmaeY,50,100);
