@@ -33,8 +33,7 @@ let Level_1=false; //Tutorial
 let Level_2=false; //Drills and Enemies
 let Level_3=false; //Final Boss
 //Collision boolean to prevent always colliding
-let TopBorderHit1=false;
-let TopBorderHit2=false;
+let TopBorderHit=false;
 let BottomBorderHit=false;
 let PlatformHit1=false;
 let PlatformHit2=false;
@@ -367,8 +366,7 @@ function BasicStart(FuelX,FuelY){
     SmaeX-=2;
   }
   StartPlatformHit=collideRectRect(0,150,250,50,SmaeX,SmaeY,50,100);
-  TopBorderHit1=collideRectRect(TopBorderX,TopBorderY-1000,1300,900,SmaeX,SmaeY,50,100);
-  TopBorderHit2=collideRectRect(TopBorderX,TopBorderY-100,1300,100,SmaeX,SmaeY,50,100);
+  TopBorderHit=collideRectRect(TopBorderX,TopBorderY-1000,1300,900,SmaeX,SmaeY,50,100);
   BottomBorderHit=collideRectRect(BottomBorderX,BottomBorderY,1300,1000,SmaeX,SmaeY,50,100);
   //Prevent player going the way the came
   EntryLaserDoorHit=collideRectRect(75,0,25,150,SmaeX,SmaeY,50,100);
@@ -386,12 +384,8 @@ function BasicStart(FuelX,FuelY){
   if (StartPlatformHit==true){
     SmaeY=50;
   }
-  //Allow reset function to work
-  if (TopBorderHit1==true){
-    SmaeY+=20;
-  }
-  //When not using reset function make hitting the top smoother
-  if (TopBorderHit2==true){
+  //Reset Player movement to the beginning when pressing reset button
+  if (TopBorderHit==true){
     SmaeY=0;
   }
   //Keep player on BottomBorder (set value to make smoother)
@@ -449,8 +443,7 @@ function SpecialStart(FuelX,FuelY){
     SmaeX-=2;
   }
   StartPlatformHit=collideRectRect(0,150,250,50,SmaeX,SmaeY,50,100);
-  TopBorderHit1=collideRectRect(TopBorderX,TopBorderY-1000,1300,1000,SmaeX,SmaeY,50,100);
-  TopBorderHit2=collideRectRect(TopBorderX,TopBorderY-100,1300,100,SmaeX,SmaeY,50,100);
+  TopBorderHit=collideRectRect(TopBorderX,TopBorderY-1000,1300,1000,SmaeX,SmaeY,50,100);
   BottomBorderHit=collideRectRect(BottomBorderX,BottomBorderY,1300,1000,SmaeX,SmaeY,50,100);
   //Prevent player going the way the came
   EntryLaserDoorHit=collideRectRect(75,0,25,150,SmaeX,SmaeY,50,100);
@@ -461,12 +454,8 @@ function SpecialStart(FuelX,FuelY){
   if (StartPlatformHit==true){
     SmaeY=50;
   }
-  //Allow reset function to work
-  if (TopBorderHit1==true){
-    SmaeY+=20;
-  }
-  //When not using reset function make hitting the top smoother
-  if (TopBorderHit2==true){
+  //Reset Player movement to the beginning when pressing reset button
+  if (TopBorderHit==true){
     SmaeY=0;
   }
   //Keep player on BottomBorder (set value to make smoother)
