@@ -343,16 +343,6 @@ function draw(){
     if (SmaeHitButton==true){
       VictoryScreen(0,SmaeY);
     }
-    //move Smae Left
-    if (keyIsDown(65)){
-      SmaeX-=2;
-      image(SmaeLeft,SmaeX,SmaeY,50,100);
-    }
-    //move Smae right
-    if (keyIsDown(68)){
-      SmaeX+=2;
-      image(SmaeRight,SmaeX,SmaeY,50,100);
-    }
   }
 }
 //reduce repeated code for start of each level
@@ -505,6 +495,16 @@ function SpecialStart(FuelX,FuelY){
       SmaeY-=5;
     }
   }
+  //move Smae Left
+   if (keyIsDown(65)){
+     SmaeX-=2;
+     image(SmaeLeft,SmaeX,SmaeY,50,100);
+   }
+   //move Smae right
+   if (keyIsDown(68)){
+      SmaeX+=2;
+      image(SmaeRight,SmaeX,SmaeY,50,100);
+   }
 }
 //draw player character
 function drawSmae(SmaeX,SmaeY){
